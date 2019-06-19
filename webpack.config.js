@@ -11,6 +11,22 @@ let entry = [
   'core-js/stable',
   './index.js',
 ]
+let output = {
+  path: path.join(__dirname, '/dist'),
+  filename: 'react-simple-data-table.js',
+  library: 'SimpleDataTable',
+  libraryTarget: 'umd',
+}
+let externals = [
+  {
+    react: {
+      root: 'React',
+      commonjs2: 'react',
+      commonjs: 'react',
+      amd: 'react',
+    },
+  },
+]
 let plugins = []
 
 if (dev) {
@@ -19,29 +35,24 @@ if (dev) {
     'core-js/stable',
     './examples/full-featured.jsx',
   ]
-  plugins = [new HtmlWebpackPlugin({ title: 'react-simple-data-table' })]
+  output = {
+    path: path.join(__dirname, '/dist'),
+    filename: 'react-simple-data-table-example.js',
+  }
+  externals = []
+  plugins = [
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, '/test/index.html'),
+    }),
+  ]
 }
 
 module.exports = {
   mode,
   context,
   entry,
-  output: {
-    path: path.join(__dirname, '/dist'),
-    filename: 'react-simple-data-table.js',
-    library: 'SimpleDataTable',
-    libraryTarget: 'umd',
-  },
-  externals: [
-    {
-      react: {
-        root: 'React',
-        commonjs2: 'react',
-        commonjs: 'react',
-        amd: 'react',
-      },
-    },
-  ],
+  output,
+  externals,
   devServer: {
     compress: true,
     contentBase: [

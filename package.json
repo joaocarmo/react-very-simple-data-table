@@ -26,8 +26,11 @@
   },
   "homepage": "https://github.com/joaocarmo/react-simple-data-table#readme",
   "peerDependencies": {
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0"
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0"
+  },
+  "dependencies": {
+    "faker": "^4.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
