@@ -63,5 +63,7 @@ typings/
 # Mac files
 .DS_Store
 
-# Distribution files
-dist/
+# Development files
+examples/
+lib/
+test/

@@ -47,7 +47,7 @@ module.exports = {
     contentBase: [
       path.join(__dirname, 'dist'),
     ],
-    open: 'Google Chrome',
+    open: true,
     overlay: true,
     port: 3000,
   },
