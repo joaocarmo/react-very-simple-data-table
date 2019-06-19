@@ -1,5 +1,5 @@
-# react-simple-data-table
-[![npm version](https://badge.fury.io/js/react-simple-data-table.svg)][1]
+# react-very-simple-data-table
+[![npm version](https://badge.fury.io/js/react-very-simple-data-table.svg)][1]
 
 When all you want is a table
 
@@ -13,7 +13,7 @@ about rendering or need some smarts, try [react-smart-data-table][2].
 ## Installation
 
 ```
-$ npm install react-simple-data-table
+$ npm install react-very-simple-data-table
 ```
 
 ## Features
@@ -41,7 +41,7 @@ accessible from your browser at the address `http://localhost:3000/`.
 $ npm start
 ```
 
-[1]: https://badge.fury.io/js/react-simple-data-table
+[1]: https://badge.fury.io/js/react-very-simple-data-table
 [2]: https://github.com/joaocarmo/react-smart-data-table
-[3]: https://github.com/joaocarmo/react-simple-data-table/tree/master/examples
-[4]: https://joaocarmo.github.io/react-simple-data-table/examples/full-featured
+[3]: https://github.com/joaocarmo/react-very-simple-data-table/tree/master/examples
+[4]: https://joaocarmo.github.io/react-very-simple-data-table/examples/full-featured

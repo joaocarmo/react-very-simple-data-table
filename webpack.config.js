@@ -15,7 +15,7 @@ let entry = [
 ]
 let output = {
   path: path.join(__dirname, '/dist'),
-  filename: 'react-simple-data-table.js',
+  filename: 'react-very-simple-data-table.js',
   library: 'SimpleDataTable',
   libraryTarget: 'umd',
 }
@@ -39,7 +39,7 @@ if (dev) {
   ]
   output = {
     path: path.join(__dirname, '/dist'),
-    filename: 'react-simple-data-table-example.js',
+    filename: 'react-very-simple-data-table-example.js',
   }
   externals = []
   plugins = [

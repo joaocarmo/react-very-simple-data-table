@@ -1,8 +1,8 @@
 {
-  "name": "react-simple-data-table",
+  "name": "react-very-simple-data-table",
   "version": "0.0.1",
   "description": "When all you want is a table",
-  "main": "dist/react-simple-data-table.js",
+  "main": "dist/react-very-simple-data-table.js",
   "scripts": {
     "start": "npm run build && npm run server",
     "server": "NODE_ENV=development webpack-dev-server --config webpack.config.js",
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/joaocarmo/react-simple-data-table.git"
+    "url": "git+https://github.com/joaocarmo/react-very-simple-data-table.git"
   },
   "keywords": [
     "react",
@@ -23,9 +23,9 @@
   "author": "Joao Carmo",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/joaocarmo/react-simple-data-table/issues"
+    "url": "https://github.com/joaocarmo/react-very-simple-data-table/issues"
   },
-  "homepage": "https://github.com/joaocarmo/react-simple-data-table#readme",
+  "homepage": "https://github.com/joaocarmo/react-very-simple-data-table#readme",
   "peerDependencies": {
     "react": "^16.8.0",
     "react-dom": "^16.8.0"
