@@ -27,6 +27,10 @@ $ npm install react-simple-data-table
 
 Please check the [examples][3] until the documentation is complete.
 
+## Demos
+
+You can experiment with a demo [here][4].
+
 ## Forking / Contributing
 
 If you want to fork or contribute, it's easy to test your changes. Just run the
@@ -40,3 +44,4 @@ $ npm start
 [1]: https://badge.fury.io/js/react-simple-data-table
 [2]: https://github.com/joaocarmo/react-smart-data-table
 [3]: https://github.com/joaocarmo/react-simple-data-table/tree/master/examples
+[4]: https://joaocarmo.github.io/react-simple-data-table/examples/full-featured

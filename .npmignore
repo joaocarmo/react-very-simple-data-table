@@ -67,3 +67,5 @@ typings/
 examples/
 lib/
 test/
+dist/*.html
+dist/*-example.js

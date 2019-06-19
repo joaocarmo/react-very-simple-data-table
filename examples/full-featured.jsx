@@ -45,7 +45,10 @@ const headers = [
   },
 ]
 
+const spacedSpan = { marginLeft: '20px' }
+
 const FullFeaturedDemo = () => {
+  const [template, setTemplate] = useState('simple-data-table-example')
   const [vertical, setVertical] = useState(false)
   const [rightAlignedNames, setRightAlignedNames] = useState(false)
 
@@ -60,6 +63,21 @@ const FullFeaturedDemo = () => {
       </style>
       <div style={{ margin: '20px 0px' }}>
         <span>
+          Use a template framework?
+          {' '}
+          <select
+            name="template"
+            id="template"
+            value={template}
+            onChange={({ target: { value } }) => setTemplate(value)}
+          >
+            <option value="none">None</option>
+            <option value="simple-data-table-example">Custom</option>
+            <option value="ui selectable striped table">Semantic UI</option>
+            <option value="table table-striped table-hover">Bootstrap</option>
+          </select>
+        </span>
+        <span style={spacedSpan}>
           <label htmlFor="vertical">
             <input
               type="checkbox"
@@ -72,7 +90,7 @@ const FullFeaturedDemo = () => {
           </label>
         </span>
         {vertical && (
-          <span style={{ marginLeft: '20px' }}>
+          <span style={spacedSpan}>
             <label htmlFor="rightAlignedNames">
               <input
                 type="checkbox"
@@ -91,7 +109,7 @@ const FullFeaturedDemo = () => {
         headers={headers}
         vertical={vertical}
         rightAlignedNames={rightAlignedNames}
-        className='simple-data-table-example'
+        className={template}
       />
     </>
   )

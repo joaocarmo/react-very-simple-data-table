@@ -1,5 +1,7 @@
 const path = require('path')
+const merge = require('webpack-merge')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const common = require('./webpack.common.js')
 
 const { NODE_ENV } = process.env
 
@@ -47,47 +49,10 @@ if (dev) {
   ]
 }
 
-module.exports = {
-  mode,
+module.exports = merge(common, {
   context,
   entry,
   output,
   externals,
-  devServer: {
-    compress: true,
-    contentBase: [
-      path.join(__dirname, 'dist'),
-    ],
-    open: true,
-    overlay: true,
-    port: 3000,
-  },
-  module: {
-    rules: [
-      {
-        test: /.jsx?$/,
-        exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: [
-              [
-                '@babel/preset-env',
-                {
-                  useBuiltIns: 'usage',
-                  modules: 'umd',
-                  corejs: '3',
-                },
-              ],
-              '@babel/preset-react',
-            ],
-            plugins: [
-              '@babel/plugin-transform-runtime',
-            ],
-          },
-        },
-      },
-    ],
-  },
   plugins,
-}
+})
