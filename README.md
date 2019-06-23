@@ -1,5 +1,6 @@
 # react-very-simple-data-table
 [![npm version](https://badge.fury.io/js/react-very-simple-data-table.svg)][1]
+[![jest](https://jestjs.io/img/jest-badge.svg)](https://github.com/facebook/jest)
 
 When all you want is a table
 
@@ -30,6 +31,14 @@ Please check the [examples][3] until the documentation is complete.
 ## Demos
 
 You can experiment with a demo [here][4].
+
+## Testing
+
+Run tests using _jest_:
+
+```
+$ npm test
+```
 
 ## Forking / Contributing
 
