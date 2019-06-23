@@ -8,7 +8,9 @@ const headerStyle = {
 }
 
 const TableBody = ({ children, ...props }) => <tbody {...props}>{children}</tbody>
-const TableCell = ({ children, header, rightAlignedNames, ...props }) => {
+const TableCell = ({
+  children, header, rightAlignedNames, ...props
+}) => {
   const headerCellStyle = {
     verticalAlign: 'top',
     textAlign: rightAlignedNames ? 'right' : 'left',

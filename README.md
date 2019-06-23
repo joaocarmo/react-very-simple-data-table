@@ -2,7 +2,7 @@
 [![npm version](https://badge.fury.io/js/react-very-simple-data-table.svg)][1]
 [![jest](https://jestjs.io/img/jest-badge.svg)](https://github.com/facebook/jest)
 
-When all you want is a table
+When all you want is a table !
 
 ## About
 
@@ -34,7 +34,7 @@ You can experiment with a demo [here][4].
 
 ## Testing
 
-Run tests using _jest_:
+Run tests using _Jest_:
 
 ```
 $ npm test

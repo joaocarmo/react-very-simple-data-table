@@ -1,3 +1,3 @@
 - Allow custom classes and elements to be passed down
 - Fix lint errors
-- Fix id passed down to iterator
+- Fix resolve issues with .jsx extension

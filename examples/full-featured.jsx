@@ -105,6 +105,7 @@ const FullFeaturedDemo = () => {
         )}
       </div>
       <SimpleDataTable
+        keyId="id"
         data={data}
         headers={headers}
         vertical={vertical}

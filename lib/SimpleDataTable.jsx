@@ -3,7 +3,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Table from './Table.jsx'
 import Link from './Link.jsx'
-import { getNestedValue, getLastValue } from './helper-functions.js'
+import { getNestedValue, getLastValue } from './helper-functions'
 
 /*
  * How to use (example)
@@ -51,7 +51,7 @@ const renderCellFromHeader = ({
 
 const SimpleDataTable = (props) => {
   const {
-    headers, data, vertical, rightAlignedNames, ...otherProps
+    keyId, headers, data, vertical, rightAlignedNames, ...otherProps
   } = props
   return vertical ? (
     <Table {...otherProps}>
@@ -83,7 +83,7 @@ const SimpleDataTable = (props) => {
       </Table.Header>
       <Table.Body>
         {data.map((row, idx) => (
-          <Table.Row key={row._id || idx}>
+          <Table.Row key={keyId ? row[keyId] : idx}>
             {headers.map(header => renderCellFromHeader(header, row))}
           </Table.Row>
         ))}
@@ -94,14 +94,16 @@ const SimpleDataTable = (props) => {
 
 // Defines the type of data expected in each passed prop
 SimpleDataTable.propTypes = {
-  data: PropTypes.array.isRequired,
-  headers: PropTypes.array.isRequired,
+  keyId: PropTypes.string,
+  data: PropTypes.arrayOf(PropTypes.object).isRequired,
+  headers: PropTypes.arrayOf(PropTypes.object).isRequired,
   vertical: PropTypes.bool,
   rightAlignedNames: PropTypes.bool,
 }
 
 // Defines the default values for not passing a certain prop
 SimpleDataTable.defaultProps = {
+  keyId: '',
   vertical: false,
   rightAlignedNames: false,
 }
