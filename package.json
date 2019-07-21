@@ -1,6 +1,6 @@
 {
   "name": "react-very-simple-data-table",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "When all you want is a table",
   "main": "dist/react-very-simple-data-table.js",
   "scripts": {

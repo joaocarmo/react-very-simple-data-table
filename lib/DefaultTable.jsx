@@ -26,13 +26,13 @@ const TableHeader = ({ children, style, ...props }) => <thead style={style || he
 const TableHeaderCell = ({ children, ...props }) => <th {...props}>{children}</th>
 const TableRow = ({ children, ...props }) => <tr {...props}>{children}</tr>
 
-const Table = ({ children, ...props }) => <table {...props}>{children}</table>
+const DefaultTable = ({ children, ...props }) => <table {...props}>{children}</table>
 
-Table.Body = TableBody
-Table.Cell = TableCell
-Table.Footer = TableFooter
-Table.Header = TableHeader
-Table.HeaderCell = TableHeaderCell
-Table.Row = TableRow
+DefaultTable.Body = TableBody
+DefaultTable.Cell = TableCell
+DefaultTable.Footer = TableFooter
+DefaultTable.Header = TableHeader
+DefaultTable.HeaderCell = TableHeaderCell
+DefaultTable.Row = TableRow
 
-export default Table
+export default DefaultTable

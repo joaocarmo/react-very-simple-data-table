@@ -15,6 +15,9 @@ module.exports = {
     overlay: true,
     port: 3000,
   },
+  resolve: {
+    extensions: ['.jsx', '.js'],
+  },
   module: {
     rules: [
       {

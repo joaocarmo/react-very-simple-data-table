@@ -45,6 +45,28 @@ const headers = [
   },
 ]
 
+const colorNthRow = `
+  table.simple-data-table-example > tbody > tr:nth-child(even) {
+    background-color: #f2f2f2
+  }
+`
+
+const hoverTHStyle = `
+  .my-custom-header-cell:hover {
+    background-color: aliceblue;
+  }
+`
+
+const MyCustomHeaderCell = ({ children, ...props }) => (
+  <th {...props} className="my-custom-header-cell">
+    {children}
+    &nbsp;
+    <a href="#" aria-label="Hide this header">
+      &times;
+    </a>
+  </th>
+)
+
 const spacedSpan = { marginLeft: '20px' }
 
 const FullFeaturedDemo = () => {
@@ -56,9 +78,8 @@ const FullFeaturedDemo = () => {
     <>
       <style type="text/css">
         {`
-          table.simple-data-table-example > tbody > tr:nth-child(even) {
-            background-color: #f2f2f2
-          }
+          ${colorNthRow}
+          ${hoverTHStyle}
         `}
       </style>
       <div style={{ margin: '20px 0px' }}>
@@ -111,6 +132,9 @@ const FullFeaturedDemo = () => {
         vertical={vertical}
         rightAlignedNames={rightAlignedNames}
         className={template}
+        customElements={{
+          th: MyCustomHeaderCell,
+        }}
       />
     </>
   )

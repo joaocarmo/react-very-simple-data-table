@@ -23,6 +23,8 @@ $ npm install react-very-simple-data-table
 - Renders an horizontal table
 - Renders a vertical table
 - Easily customizable using CSS by passing a _className_ prop
+- Allows custom table elements for:
+`table`, `tbody`, `td`, `tfoot`, `th`, `thead`, `tr`
 
 ## Usage
 

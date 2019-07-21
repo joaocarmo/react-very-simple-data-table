@@ -1,3 +1,9 @@
+## 0.0.3
+> Jul 21, 2019
+
+- Added the _customElements_ prop that allows custom table elements for:
+`table`, `tbody`, `td`, `tfoot`, `th`, `thead`, `tr`
+
 ## 0.0.2
 > Jun 23, 2019
 
