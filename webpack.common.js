@@ -8,9 +8,7 @@ module.exports = {
   mode,
   devServer: {
     compress: true,
-    contentBase: [
-      path.join(__dirname, 'dist'),
-    ],
+    contentBase: [path.join(__dirname, 'dist')],
     open: true,
     overlay: true,
     port: 3000,
@@ -37,9 +35,7 @@ module.exports = {
               ],
               '@babel/preset-react',
             ],
-            plugins: [
-              '@babel/plugin-transform-runtime',
-            ],
+            plugins: ['@babel/plugin-transform-runtime'],
           },
         },
       },

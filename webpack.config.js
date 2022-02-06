@@ -1,18 +1,13 @@
 const path = require('path')
 const merge = require('webpack-merge')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const common = require('./webpack.common.js')
+const common = require('./webpack.common')
 
-const { NODE_ENV } = process.env
-
-const mode = NODE_ENV || 'development'
+const mode = process.env.NODE_ENV || 'development'
 const dev = mode === 'development'
 
 let context = path.join(__dirname, '/lib')
-let entry = [
-  'core-js/stable',
-  './index.js',
-]
+let entry = ['core-js/stable', './index.js']
 let output = {
   path: path.join(__dirname, '/dist'),
   filename: 'react-very-simple-data-table.js',
@@ -33,10 +28,7 @@ let plugins = []
 
 if (dev) {
   context = path.join(__dirname)
-  entry = [
-    'core-js/stable',
-    './examples/full-featured.jsx',
-  ]
+  entry = ['core-js/stable', './examples/full-featured.jsx']
   output = {
     path: path.join(__dirname, '/dist'),
     filename: 'react-very-simple-data-table-example.js',

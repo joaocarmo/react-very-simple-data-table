@@ -1,5 +1,3 @@
-// Import modules
-import React from 'react'
 import PropTypes from 'prop-types'
 import DefaultTable from './DefaultTable'
 import Link from './Link'
@@ -25,38 +23,38 @@ import { getNestedValue, getLastValue } from './helper-functions'
  *   {...props}
  * />
  *
-*/
+ */
 
-const renderCellFromHeader = ({
-  path, link, transform, appendValue,
-}, row, Table) => {
+const renderCellFromHeader = (
+  { path, link, transform, appendValue },
+  row,
+  Table,
+) => {
   const key = getLastValue(path)
   const isLink = typeof link === 'string'
   const value = getNestedValue(row, path)
-  const transformedValue = (
-    typeof transform === 'function' ? transform(value, row) : value
-  ) || '-'
+  const transformedValue =
+    (typeof transform === 'function' ? transform(value, row) : value) || '-'
   const linkValue = appendValue ? `${link}/${value}` : link
   return (
     <Table.Cell key={key}>
       {!isLink && transformedValue}
-      {isLink && (
-        <Link to={linkValue}>
-          {transformedValue}
-        </Link>
-      )}
+      {isLink && <Link to={linkValue}>{transformedValue}</Link>}
     </Table.Cell>
   )
 }
 
 const SimpleDataTable = (props) => {
   const {
-    keyId, headers, data, vertical, rightAlignedNames, customElements,
+    keyId,
+    headers,
+    data,
+    vertical,
+    rightAlignedNames,
+    customElements,
     ...otherProps
   } = props
-  const {
-    table, tbody, td, tfoot, th, thead, tr,
-  } = customElements
+  const { table, tbody, td, tfoot, th, thead, tr } = customElements
   const Table = table || DefaultTable
   Table.Body = tbody || DefaultTable.Body
   Table.Cell = td || DefaultTable.Cell
@@ -67,9 +65,9 @@ const SimpleDataTable = (props) => {
   return vertical ? (
     <Table {...otherProps}>
       <Table.Body>
-        {data.map(row => (
+        {data.map((row) => (
           <>
-            {headers.map(header => (
+            {headers.map((header) => (
               <Table.Row key={header.name}>
                 <Table.Cell header rightAlignedNames={rightAlignedNames}>
                   {header.name}
@@ -86,16 +84,14 @@ const SimpleDataTable = (props) => {
       <Table.Header>
         <Table.Row>
           {headers.map(({ name }) => (
-            <Table.HeaderCell key={name}>
-              {name}
-            </Table.HeaderCell>
+            <Table.HeaderCell key={name}>{name}</Table.HeaderCell>
           ))}
         </Table.Row>
       </Table.Header>
       <Table.Body>
         {data.map((row, idx) => (
           <Table.Row key={keyId ? row[keyId] : idx}>
-            {headers.map(header => renderCellFromHeader(header, row, Table))}
+            {headers.map((header) => renderCellFromHeader(header, row, Table))}
           </Table.Row>
         ))}
       </Table.Body>

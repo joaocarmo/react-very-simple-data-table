@@ -1,6 +1,6 @@
-// Main imports
-import React, { useState } from 'react'
+import { useState } from 'react'
 import ReactDOM from 'react-dom'
+import PropTypes from 'prop-types'
 import faker from '@withshepherd/faker'
 import SimpleDataTable from '..'
 
@@ -32,7 +32,10 @@ const data = generateData(100)
 
 const headers = [
   {
-    path: ['id'], name: 'ID', link: '/users', appendValue: true,
+    path: ['id'],
+    name: 'ID',
+    link: '/users',
+    appendValue: true,
   },
   { path: ['fullName'], name: 'Full Name' },
   { path: ['username'], name: 'Username' },
@@ -61,11 +64,15 @@ const MyCustomHeaderCell = ({ children, ...props }) => (
   <th {...props} className="my-custom-header-cell">
     {children}
     &nbsp;
-    <a href="#" aria-label="Hide this header">
+    <a href="#hide" aria-label="Hide this header">
       &times;
     </a>
   </th>
 )
+
+MyCustomHeaderCell.propTypes = {
+  children: PropTypes.node.isRequired,
+}
 
 const spacedSpan = { marginLeft: '20px' }
 
@@ -84,8 +91,7 @@ const FullFeaturedDemo = () => {
       </style>
       <div style={{ margin: '20px 0px' }}>
         <span>
-          Use a template framework?
-          {' '}
+          Use a template framework?{' '}
           <select
             name="template"
             id="template"
@@ -140,7 +146,4 @@ const FullFeaturedDemo = () => {
   )
 }
 
-ReactDOM.render(
-  <FullFeaturedDemo />,
-  document.getElementById('app'),
-)
+ReactDOM.render(<FullFeaturedDemo />, document.getElementById('app'))

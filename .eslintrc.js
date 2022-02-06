@@ -24,6 +24,8 @@ module.exports = {
   },
   plugins: ['react', 'jest', 'prettier'],
   rules: {
+    'import/no-extraneous-dependencies': 'off',
+    'react/forbid-prop-types': 'off',
     'react/function-component-definition': [
       'error',
       { namedComponents: 'arrow-function' },
