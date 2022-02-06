@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useCallback, useState } from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 import faker from '@withshepherd/faker'
@@ -60,15 +60,22 @@ const hoverTHStyle = `
   }
 `
 
-const MyCustomHeaderCell = ({ children, ...props }) => (
-  <th {...props} className="my-custom-header-cell">
-    {children}
-    &nbsp;
-    <a href="#hide" aria-label="Hide this header">
-      &times;
-    </a>
-  </th>
-)
+const MyCustomHeaderCell = ({ children, ...props }) => {
+  const handleOnClick = useCallback(() => {
+    // eslint-disable-next-line no-alert
+    window.alert(`You clicked on ${children}`)
+  }, [children])
+
+  return (
+    <th {...props} className="my-custom-header-cell">
+      {children}
+      &nbsp;
+      <a href="#hide" aria-label="Hide this header" onClick={handleOnClick}>
+        &times;
+      </a>
+    </th>
+  )
+}
 
 MyCustomHeaderCell.propTypes = {
   children: PropTypes.node.isRequired,

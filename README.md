@@ -1,14 +1,13 @@
 # react-very-simple-data-table
 
-[![npm version](https://badge.fury.io/js/react-very-simple-data-table.svg)][1]
-[![jest](https://jestjs.io/img/jest-badge.svg)](https://github.com/facebook/jest)
+[![npm version](https://badge.fury.io/js/react-very-simple-data-table.svg)][badge]
 
 When all you want is a table !
 
 ## About
 
 A very simple and flexible data table for React.js. If you don't want to think
-about rendering or need some smarts, try [react-smart-data-table][2].
+about rendering or need some smarts, try [react-smart-data-table][rsdt].
 
 **This is in a very experimental stage**
 
@@ -33,11 +32,11 @@ yarn add react-very-simple-data-table
 
 ## Usage
 
-Please check the [examples][3] until the documentation is complete.
+Please check the [examples][examples] until the documentation is complete.
 
 ## Demos
 
-You can experiment with a demo [here][4].
+You can experiment with a demo [here][demo].
 
 ## Testing
 
@@ -57,7 +56,7 @@ accessible from your browser at the address `http://localhost:3000/`.
 yarn start
 ```
 
-[1]: https://badge.fury.io/js/react-very-simple-data-table
-[2]: https://github.com/joaocarmo/react-smart-data-table
-[3]: https://github.com/joaocarmo/react-very-simple-data-table/tree/master/examples
-[4]: https://joaocarmo.github.io/react-very-simple-data-table/examples/full-featured
+[badge]: https://badge.fury.io/js/react-very-simple-data-table
+[demo]: https://joaocarmo.com/react-very-simple-data-table/
+[examples]: ./examples
+[rsdt]: https://github.com/joaocarmo/react-smart-data-table
