@@ -1,22 +1,27 @@
-import { shallow, mount, render } from 'enzyme'
+import { render } from '@testing-library/react'
 import Link from './Link'
 
-const testLink = <Link to="/path">Content</Link>
+const setup = () => {
+  const utils = render(<Link to="/path">Content</Link>)
+
+  const link = utils.getByTestId('link')
+
+  return {
+    ...utils,
+    link,
+  }
+}
 
 describe('Examine the Link component', () => {
-  it('should render without throwing an error', () => {
-    expect(shallow(testLink).contains(<a href="/path">Content</a>)).toBe(true)
+  it('should render its content', () => {
+    const { link } = setup()
+
+    expect(link).toHaveTextContent('Content')
   })
 
-  it('should be selectable by class "a"', () => {
-    expect(shallow(testLink).is('a')).toBe(true)
-  })
+  it('should have the correct href', () => {
+    const { link } = setup()
 
-  it.skip('should mount in a full DOM', () => {
-    expect(mount(testLink).find('a').length).toBe(1)
-  })
-
-  it('should render to static HTML', () => {
-    expect(render(testLink).text()).toEqual('Content')
+    expect(link).toHaveAttribute('href', '/path')
   })
 })
