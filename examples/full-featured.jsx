@@ -1,7 +1,7 @@
 // Main imports
 import React, { useState } from 'react'
 import ReactDOM from 'react-dom'
-import faker from 'faker'
+import faker from '@withshepherd/faker'
 import SimpleDataTable from '..'
 
 const generateData = (numResults = 0) => {
